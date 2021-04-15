@@ -7,7 +7,7 @@ class Table extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://randomuser.me/api/')
+        fetch('https://randomuser.me/api/?results=10')
         .then(response => response.json())
         .then(people => {
             console.log(people);
@@ -17,8 +17,10 @@ class Table extends React.Component {
 
     render() {
         return (
-            <tr>
-
+            <tr className='tableRow'>
+                <td>first</td>
+                <td>last</td>
+                <td>gender</td>
             </tr>
         )
     }

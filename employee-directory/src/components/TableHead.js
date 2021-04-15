@@ -5,9 +5,9 @@ class Table extends React.Component {
     render() {
         return (
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
+                <th className='tableHeading'>First Name</th>
+                <th className='tableHeading'>Last Name</th>
+                <th className='tableHeading'>Gender</th>
             </tr>
         )
     }

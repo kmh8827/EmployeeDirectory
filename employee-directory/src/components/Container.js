@@ -3,13 +3,9 @@ import Table from './Table';
 
 class Container extends React.Component {
 
-    state = {
-        people: {}
-    };
-
     render() {
         return (
-            <div>
+            <div className='container'>
                 <Table />
             </div>
         );
