@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './Card';
 
 class Container extends React.Component {
 
@@ -18,9 +19,13 @@ class Container extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-
-                </ul>
+                <table>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </table>
             </div>
         );
     }
