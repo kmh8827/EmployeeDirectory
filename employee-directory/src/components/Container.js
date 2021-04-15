@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Card extends React.Component {
+class Container extends React.Component {
 
     state = {
-        people: []
+        people: {}
     };
 
     componentDidMount() {
@@ -19,7 +19,7 @@ class Card extends React.Component {
         return (
             <div>
                 <ul>
-                    
+
                 </ul>
             </div>
         );
@@ -27,4 +27,4 @@ class Card extends React.Component {
 
 }
 
-export default Card;
+export default Container;
