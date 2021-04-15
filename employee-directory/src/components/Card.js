@@ -10,6 +10,7 @@ class Card extends React.Component {
         fetch('https://randomuser.me/api/')
         .then(response => response.json())
         .then(people => {
+            console.log(people);
             this.setState({ people });
         })
     }
@@ -17,7 +18,9 @@ class Card extends React.Component {
     render() {
         return (
             <div>
-
+                <ul>
+                    
+                </ul>
             </div>
         );
     }
