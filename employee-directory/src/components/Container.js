@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Table from './Table';
 
 class Container extends React.Component {
 
@@ -7,25 +7,10 @@ class Container extends React.Component {
         people: {}
     };
 
-    componentDidMount() {
-        fetch('https://randomuser.me/api/')
-        .then(response => response.json())
-        .then(people => {
-            console.log(people);
-            this.setState({ people });
-        })
-    }
-
     render() {
         return (
             <div>
-                <table>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </table>
+                <Table />
             </div>
         );
     }
