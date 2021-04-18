@@ -14,11 +14,11 @@ class Table extends React.Component {
         fetch('https://randomuser.me/api/?results=50')
         .then(response => response.json())
         .then(response => {
-            console.log(response.results);
             this.setState({
                 people : response.results,
                 filteredPeople: response.results
             });
+            console.log(this.state.filteredPeople);
         })
         .catch(err => console.log(err));
     }
@@ -30,11 +30,28 @@ class Table extends React.Component {
         });
     };
 
-    sortAscending() {
-        console.log('ascending');
+    sortAscending = event => { 
+        event.preventDefault();
+        const list = this.state.filteredPeople;
+        list.sort((a, b) => {
+            const nameA = a.name.last.toUpperCase();
+            const nameB = b.name.last.toUpperCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        })
+        console.log(list);
+        this.setState({
+            filteredPeople: list
+        });
     };
 
-    sortDescending() {
+    sortDescending = event => {
+        event.preventDefault();
         console.log('descending');
     };
 
