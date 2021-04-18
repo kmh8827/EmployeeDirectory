@@ -1,17 +1,19 @@
 import React from 'react';
 
-class Table extends React.Component {
+class TableHead extends React.Component {
 
     render() {
         return (
-            <tr>
-                <th className='tableHeading'>First Name</th>
-                <th className='tableHeading'>Last Name</th>
-                <th className='tableHeading'>Gender</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th className="tableHeading">First Name</th>
+                    <th className="tableHeadin">Last Name</th>
+                    <th className="tableHeading">Gender</th>
+                </tr>
+            </thead>
         )
     }
 
 }
 
-export default Table;
+export default TableHead;
