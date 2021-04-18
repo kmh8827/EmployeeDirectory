@@ -10,6 +10,7 @@ class TableBody extends React.Component {
                             <td>{emp.name.first}</td>
                             <td>{emp.name.last}</td>
                             <td>{emp.gender}</td>
+                            <td>{emp.location.country}</td>
                         </tr>
                     ))
                 }

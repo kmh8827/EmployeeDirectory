@@ -9,6 +9,7 @@ class TableHead extends React.Component {
                     <th className="tableHeading">First Name</th>
                     <th className="tableHeadin">Last Name</th>
                     <th className="tableHeading">Gender</th>
+                    <th className="tableHeading">Country</th>
                 </tr>
             </thead>
         )
