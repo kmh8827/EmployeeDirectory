@@ -30,10 +30,20 @@ class Table extends React.Component {
         });
     };
 
+    sortAscending() {
+        console.log('ascending');
+    };
+
+    sortDescending() {
+        console.log('descending');
+    };
+
     render() {
         return (
             <div>
                 <input type="text" name="search" value={this.state.search} onChange={this.handleInputChange} />
+                <button onClick={this.sortAscending}>Sort Ascending</button>
+                <button onClick={this.sortDescending}>Sort Descending</button>
                 <table>
                 <TableHead />
                 <TableBody rows={this.state.filteredPeople} />
