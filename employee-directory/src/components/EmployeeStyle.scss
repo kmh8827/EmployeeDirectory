@@ -1,11 +1,16 @@
 $background: #623b5a;
 $clipboard: #9A7B4F;
-$green: #E4BB97;
+$steel: #caccce;
 $paper: #ffffff;
 $lines: blue;
 
 body {
     background-color: $background;
+}
+
+.clipboard {
+    background-color: $clipboard;
+    border-radius: 25px;
 }
 
 .content {
@@ -23,7 +28,7 @@ body {
 
 .contentTR {
     background-color: $paper;
-    border: 3px solid $lines;
+    border: 1px solid $lines;
 }
 
 .contentTable {
@@ -38,24 +43,14 @@ body {
     margin: 0 auto;
 }
 
-.footer {
-    border-radius:  0 0 25px 25px;
-    background-color: $clipboard;
-    display: flex;
-    justify-content: center;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .hidden {
     color: white;
     background-color: white;
     padding: 15px;
     margin: 15px;
-    border-bottom: 3px solid $lines;
-    border-left: 3px solid $lines;
-    border-right: 3px solid red;
+    border-bottom: 1px solid $lines;
+    border-left: 1px solid $lines;
+    border-right: 1px solid red;
 }
 .inputArea {
     background-color: $clipboard;
@@ -65,13 +60,13 @@ body {
 }
 
 .redLine {
-    border-right: 3px solid red;
+    border-right: 1px solid red;
 }
 
 .sortA, .sortD {
-	box-shadow: 0px 0px 0px 0px $green;
-	background:linear-gradient(to bottom, $green 5%, $green 100%);
-	background-color: $green;
+	box-shadow: 0px 0px 0px 0px $steel;
+	background:linear-gradient(to bottom, $steel 5%, $steel 100%);
+	background-color: $steel;
 	border-radius:42px;
 	display:inline-block;
 	cursor:pointer;
@@ -80,7 +75,7 @@ body {
 	padding:5px 60px;
     margin: 25px;
 	text-decoration:none;
-	text-shadow:0px 0px 0px $green;
+	text-shadow:0px 0px 0px $steel;
 }
 .sortA:hover, .sortD:hover {
 	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
@@ -101,8 +96,6 @@ body {
 }
 
 .sortingArea {
-    border-radius: 25px 25px 0 0;
-    background-color: $clipboard;
     display: flex;
     justify-content: center;
     width: 98%;
@@ -111,8 +104,9 @@ body {
 }
 
 .tableHeading {
+    line-height: 120px;
+    font-size: 36px;
+    vertical-align: text-bottom;
     background-color: $paper;
-    padding: 15px;
-    margin: 15px;
-    border-right: 3px solid $lines;
+    border-right: 1px solid $lines;
 }

@@ -112,7 +112,7 @@ class Table extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="clipboard">
                 <div className="sortingArea">
                     <button className="sortA" onClick={this.sortAscending}>Sort By Last Name Ascending</button>
                     <button className="sortD" onClick={this.sortDescending}>Sort By Last Name Descending</button>
@@ -133,10 +133,9 @@ class Table extends React.Component {
                         <TableBody rows={this.state.filteredPeople} />
                     </table>
                 </div>
-                <div className="footer">
                 <br />
                 <br />
-                </div>
+                <br />
 
             </div>
         )
