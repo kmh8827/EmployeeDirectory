@@ -6,10 +6,10 @@ class TableHead extends React.Component {
         return (
             <thead>
                 <tr>
-                    <th className="tableHeading">First Name</th>
-                    <th className="tableHeadin">Last Name</th>
-                    <th className="tableHeading">Gender</th>
-                    <th className="tableHeading">Country</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Country</th>
                 </tr>
             </thead>
         )

@@ -119,23 +119,21 @@ class Table extends React.Component {
                     <button className="sortA" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
                     <button className="sortD" onClick={this.sortCountryDescending}>Sort By Country Descending</button>
                 </div>
+      
+                <div className="inputArea">
                 <br />
-                <hr className="break" />
+                    <h3 className="searchBar">Search for A Specific Country:</h3>
+                    <input className="countrySearch" type="text" name="search" value={this.state.search} onInput={this.handleInputChange} />
                 <br />
-                <div className="sortingArea">
-
                 </div>
-                <br />
-                <p className="searchBar">Search for A Specific Country:</p>
-                <input className="countrySearch" type="text" name="search" value={this.state.search} onInput={this.handleInputChange} />
-                <br />
+
                 <div className="contentTable">
                     <table className="content">
                         <TableHead />
                         <TableBody rows={this.state.filteredPeople} />
                     </table>
                 </div>
-                
+
             </div>
         )
     }

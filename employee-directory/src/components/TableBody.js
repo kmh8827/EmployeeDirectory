@@ -6,7 +6,7 @@ class TableBody extends React.Component {
             <tbody>
                 {
                     this.props.rows.map((emp, i) => (
-                        <tr key={i}>
+                        <tr className="contentRow" key={i}>
                             <td>{emp.name.first}</td>
                             <td>{emp.name.last}</td>
                             <td>{emp.gender}</td>

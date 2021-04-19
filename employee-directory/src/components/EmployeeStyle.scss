@@ -1,14 +1,33 @@
 $background: #add8e6;
 $green: #90ee90;
-$violet: #7f00ff;
+$yellow: #FFF1A6;
+$pink: #ffb7c1;
 
 body {
     background-color: $background;
 }
 
-.break {
-    background-color: $violet;
-    height: 2px;
+.content {
+    text-align: center;
+    border-spacing: 30px;
+}
+
+.contentRow {
+    text-align: left;
+}
+.contentTable {
+    display: flex;
+    justify-content: center;
+}
+
+.countrySearch {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+.inputArea {
+    background-color: $yellow;
 }
 
 .sortA, .sortD {
@@ -38,20 +57,6 @@ body {
     text-align: center;
 }
 
-.content {
-    text-align: center;
-}
-
-.contentTable {
-    display: flex;
-    justify-content: center;
-}
-
-.countrySearch {
-    width: 25%;
-    display: block;
-    margin: 0 auto;
-}
 
 .sort {
     padding: 2.5px;
@@ -59,6 +64,13 @@ body {
 }
 
 .sortingArea {
+    background-color: $pink;
     display: flex;
     justify-content: center;
+}
+
+.tableHeading {
+    width: 25px;
+    text-align: left;
+    font-size: 16px;
 }
