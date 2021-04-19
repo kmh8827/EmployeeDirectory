@@ -133,6 +133,10 @@ class Table extends React.Component {
                         <TableBody rows={this.state.filteredPeople} />
                     </table>
                 </div>
+                <div className="footer">
+                <br />
+                <br />
+                </div>
 
             </div>
         )
