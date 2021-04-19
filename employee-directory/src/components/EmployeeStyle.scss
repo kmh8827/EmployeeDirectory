@@ -2,20 +2,27 @@ $background: #add8e6;
 $green: #90ee90;
 $yellow: #FFF1A6;
 $pink: #ffb7c1;
+$red: #f5ad94;
+$almond: #d2b29b;
 
 body {
     background-color: $background;
 }
 
 .content {
+    width: 100%;
     text-align: center;
     border-spacing: 30px;
 }
 
-.contentRow {
-    text-align: left;
+.contentTD {
+    border-radius: 10px;
+    padding: 6px;
+    background-color: $almond;
 }
+
 .contentTable {
+    border-radius: 10px;
     display: flex;
     justify-content: center;
 }
@@ -31,7 +38,7 @@ body {
 }
 
 .sortA, .sortD {
-	box-shadow: 0px 0px 0px 0px #fff6af;
+	box-shadow: 0px 0px 0px 0px $yellow;
 	background:linear-gradient(to bottom, $green 5%, $green 100%);
 	background-color: $green;
 	border-radius:42px;
@@ -39,10 +46,10 @@ body {
 	cursor:pointer;
 	color:#333333;
 	font-weight:bold;
-	padding:5px 20px;
-    margin: 10px;
+	padding:5px 60px;
+    margin: 25px;
 	text-decoration:none;
-	text-shadow:0px 0px 0px #ffee66;
+	text-shadow:0px 0px 0px $yellow;
 }
 .sortA:hover, .sortD:hover {
 	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
@@ -57,7 +64,6 @@ body {
     text-align: center;
 }
 
-
 .sort {
     padding: 2.5px;
     margin: 5px;
@@ -70,7 +76,7 @@ body {
 }
 
 .tableHeading {
-    width: 25px;
-    text-align: left;
-    font-size: 16px;
+    background-color: $red;
+    padding: 15px;
+    margin: 15px;
 }
