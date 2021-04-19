@@ -1,0 +1,64 @@
+$background: #add8e6;
+$green: #90ee90;
+$violet: #7f00ff;
+
+body {
+    background-color: $background;
+}
+
+.break {
+    background-color: $violet;
+    height: 2px;
+}
+
+.sortA, .sortD {
+	box-shadow: 0px 0px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, $green 5%, $green 100%);
+	background-color: $green;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-weight:bold;
+	padding:5px 20px;
+    margin: 10px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffee66;
+}
+.sortA:hover, .sortD:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.sortA:active, #sortD.active {
+	position:relative;
+	top:1px;
+}
+
+.searchBar {
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+}
+
+.contentTable {
+    display: flex;
+    justify-content: center;
+}
+
+.countrySearch {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+.sort {
+    padding: 2.5px;
+    margin: 5px;
+}
+
+.sortingArea {
+    display: flex;
+    justify-content: center;
+}

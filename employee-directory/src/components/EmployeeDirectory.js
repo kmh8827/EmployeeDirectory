@@ -1,7 +1,7 @@
 import React from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
-import './EmployeeStyle.css';
+import './EmployeeStyle.scss';
 
 class Table extends React.Component {
 
@@ -113,26 +113,29 @@ class Table extends React.Component {
     render() {
         return (
             <div>
+                <div className="sortingArea">
+                    <button className="sortA" onClick={this.sortAscending}>Sort By Last Name Ascending</button>
+                    <button className="sortD" onClick={this.sortDescending}>Sort By Last Name Descending</button>
+                    <button className="sortA" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
+                    <button className="sortD" onClick={this.sortCountryDescending}>Sort By Country Descending</button>
+                </div>
+                <br />
+                <hr className="break" />
+                <br />
+                <div className="sortingArea">
+
+                </div>
+                <br />
+                <p className="searchBar">Search for A Specific Country:</p>
                 <input className="countrySearch" type="text" name="search" value={this.state.search} onInput={this.handleInputChange} />
                 <br />
-                <div className="sortingArea">
-                    <button className="sort" onClick={this.sortAscending}>Sort By Last Name Ascending</button>
-                    <button className="sort" onClick={this.sortDescending}>Sort By Last Name Descending</button>
-                </div>
-                <br />
-                <br />
-                <div className="sortingArea">
-                    <button className="sort" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
-                    <button className="sort" onClick={this.sortCountryDescending}>Sort By Country Descending</button>
-                </div>
-                <br />
-                <hr />
                 <div className="contentTable">
                     <table className="content">
                         <TableHead />
                         <TableBody rows={this.state.filteredPeople} />
                     </table>
                 </div>
+                
             </div>
         )
     }
