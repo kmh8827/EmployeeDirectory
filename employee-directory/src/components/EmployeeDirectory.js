@@ -123,7 +123,7 @@ class Table extends React.Component {
                 <br />
                 <div className="sortingArea">
                     <button className="sort" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
-                    <button className="sort" onClick={this.sortCountryDescending}>Sort By Country Ascending</button>
+                    <button className="sort" onClick={this.sortCountryDescending}>Sort By Country Descending</button>
                 </div>
                 <br />
                 <hr />
