@@ -1,8 +1,9 @@
-$background: #add8e6;
+$background: #6c5f3d;
+$blue: #add8e6;
 $green: #90ee90;
-$yellow: #FFF1A6;
+$yellow: #ead98b;
 $pink: #ffb7c1;
-$red: #f5ad94;
+$red: #fc7238;
 $almond: #d2b29b;
 
 body {
@@ -11,20 +12,29 @@ body {
 
 .content {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     border-spacing: 30px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: $blue;
 }
 
 .contentTD {
-    border-radius: 10px;
-    padding: 6px;
+    padding: 10px;
+}
+
+.contentTR {
     background-color: $almond;
 }
 
 .contentTable {
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
 }
 
 .countrySearch {
@@ -35,6 +45,9 @@ body {
 
 .inputArea {
     background-color: $yellow;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
 }
 
 .sortA, .sortD {
@@ -73,6 +86,9 @@ body {
     background-color: $pink;
     display: flex;
     justify-content: center;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tableHeading {
