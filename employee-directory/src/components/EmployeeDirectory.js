@@ -1,6 +1,7 @@
 import React from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
+import './EmployeeStyle.css';
 
 class Table extends React.Component {
 
@@ -12,36 +13,40 @@ class Table extends React.Component {
 
     componentDidMount() {
         fetch('https://randomuser.me/api/?results=50')
-        .then(response => response.json())
-        .then(response => {
-            this.setState({
-                people : response.results,
-                filteredPeople: response.results
-            });
-            console.log(this.state.people);
-        })
-        .catch(err => console.log(err));
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    people: response.results,
+                    filteredPeople: response.results
+                });
+                console.log(this.state.people);
+            })
+            .catch(err => console.log(err));
     }
 
     handleInputChange = event => {
-        const search  = event.target.name;
+        const search = event.target.name;
         let value = event.target.value;
 
         this.setState({
             [search]: value
         });
-    };
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        const list = this.state.filteredPeople.filter(item => item.location.country === this.state.search);
-        console.log(list);
-        this.setState({
-            filteredPeople: list
-        })
+        if (this.state.search !== '') {
+            const list = this.state.filteredPeople.filter(item => item.location.country.includes(this.state.search));
+
+            this.setState({
+                filteredPeople: list
+            })
+        } else {
+
+            this.setState({
+                filteredPeople: this.state.people
+            })
+        };
     }
 
-    sortAscending = event => { 
+    sortAscending = event => {
         event.preventDefault();
         const list = this.state.filteredPeople;
         list.sort((a, b) => {
@@ -108,19 +113,26 @@ class Table extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" name="search" value={this.state.search} onChange={this.handleInputChange} />
-                <button className="sort" onClick={this.handleFormSubmit}>Search By Country</button>
+                <input className="countrySearch" type="text" name="search" value={this.state.search} onInput={this.handleInputChange} />
                 <br />
-                <button className="sort" onClick={this.sortAscending}>Sort By Last Name Ascending</button>
-                <button className="sort"onClick={this.sortDescending}>Sort By Last Name Descending</button>
+                <div className="sortingArea">
+                    <button className="sort" onClick={this.sortAscending}>Sort By Last Name Ascending</button>
+                    <button className="sort" onClick={this.sortDescending}>Sort By Last Name Descending</button>
+                </div>
                 <br />
-                <button className="sort" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
-                <button className="sort"onClick={this.sortCountryDescending}>Sort By Country Ascending</button>
                 <br />
-                <table>
-                <TableHead />
-                <TableBody rows={this.state.filteredPeople} />
-                </table>
+                <div className="sortingArea">
+                    <button className="sort" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
+                    <button className="sort" onClick={this.sortCountryDescending}>Sort By Country Ascending</button>
+                </div>
+                <br />
+                <hr />
+                <div className="contentTable">
+                    <table className="content">
+                        <TableHead />
+                        <TableBody rows={this.state.filteredPeople} />
+                    </table>
+                </div>
             </div>
         )
     }

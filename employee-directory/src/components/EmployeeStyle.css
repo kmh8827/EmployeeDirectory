@@ -1,0 +1,28 @@
+body {
+    background-color: aliceblue;
+}
+
+.content {
+    text-align: center;
+}
+
+.contentTable {
+    display: flex;
+    justify-content: center;
+}
+
+.countrySearch {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+.sort {
+    padding: 2.5px;
+    margin: 5px;
+}
+
+.sortingArea {
+    display: flex;
+    justify-content: center;
+}
