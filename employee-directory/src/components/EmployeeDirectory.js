@@ -8,7 +8,8 @@ class Table extends React.Component {
     state = {
         people: [],
         filteredPeople: [],
-        search: ""
+        searchName: "",
+        searchCountry: ""
     }
 
     componentDidMount() {
@@ -24,16 +25,29 @@ class Table extends React.Component {
             .catch(err => console.log(err));
     }
 
-    handleInputChange = event => {
-        const search = event.target.name;
+    handleInputChangeCountry = event => {
+        const searchCountry = event.target.name;
+        let value = event.target.value;
+
+        const list = this.state.people.filter(item => item.location.country.includes(value));
+
+        this.setState({
+            [searchCountry]: value,
+            filteredPeople: list
+        });
+
+    };
+
+    handleInputChangeName = event => {
+        const searchName = event.target.name;
         let value = event.target.value;
 
         this.setState({
-            [search]: value
+            [searchName]: value
         });
 
         if (this.state.search !== '') {
-            const list = this.state.filteredPeople.filter(item => item.location.country.includes(this.state.search));
+            const list = this.state.filteredPeople.filter(item => item.name.first.includes(this.state.searchName));
 
             this.setState({
                 filteredPeople: list
@@ -46,12 +60,11 @@ class Table extends React.Component {
         };
     }
 
-    sortAscending = event => {
-        event.preventDefault();
+    sortAscending = () => {
         const list = this.state.filteredPeople;
         list.sort((a, b) => {
-            const nameA = a.name.last.toUpperCase();
-            const nameB = b.name.last.toUpperCase();
+            const nameA = a.name.last.toLowerCase();
+            const nameB = b.name.last.toLowerCase();
             if (nameA < nameB) return -1;
             if (nameA > nameB) return 1;
             return 0;
@@ -62,8 +75,7 @@ class Table extends React.Component {
         });
     };
 
-    sortDescending = event => {
-        event.preventDefault();
+    sortDescending = () => {
         const list = this.state.filteredPeople;
         list.sort((a, b) => {
             const nameA = a.name.last.toUpperCase();
@@ -78,17 +90,16 @@ class Table extends React.Component {
         });
     };
 
-    sortCountryAscending = event => {
-        event.preventDefault();
+    sortCountryAscending = () => {
         const list = this.state.filteredPeople;
         list.sort((a, b) => {
-            const nameA = a.location.country.toUpperCase();
-            const nameB = b.location.country.toUpperCase();
+            const nameA = a.location.country.toLowerCase();
+            const nameB = b.location.country.toLowerCase();
             if (nameA < nameB) return -1;
             if (nameA > nameB) return 1;
             return 0;
         })
-        console.log(list);
+
         this.setState({
             filteredPeople: list
         });
@@ -113,18 +124,21 @@ class Table extends React.Component {
     render() {
         return (
             <div class="clipboard">
+     
+                <div className="inputArea">
+                    <br />
+                    <h3 className="searchBar">Search for A Specific Country:</h3>
+                    <input className="countrySearch" type="text" name="searchCountry" value={this.state.searchCountry} onChange={this.handleInputChangeCountry} />
+                    <h3 className="searchBar">Search for A Specific Name:</h3>
+                    <input className="countrySearch" type="text" name="searchName" value={this.state.searchName} onChange={this.handleInputChangeName} />
+                    <br />
+                </div>
+
                 <div className="sortingArea">
                     <button className="sortA" onClick={this.sortAscending}>Sort By Last Name Ascending</button>
                     <button className="sortD" onClick={this.sortDescending}>Sort By Last Name Descending</button>
                     <button className="sortA" onClick={this.sortCountryAscending}>Sort By Country Ascending</button>
                     <button className="sortD" onClick={this.sortCountryDescending}>Sort By Country Descending</button>
-                </div>
-      
-                <div className="inputArea">
-                <br />
-                    <h3 className="searchBar">Search for A Specific Country:</h3>
-                    <input className="countrySearch" type="text" name="search" value={this.state.search} onInput={this.handleInputChange} />
-                <br />
                 </div>
 
                 <div className="contentTable">
