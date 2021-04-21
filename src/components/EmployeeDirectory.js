@@ -42,22 +42,12 @@ class Table extends React.Component {
         const searchName = event.target.name;
         let value = event.target.value;
 
+        const list = this.state.people.filter(item => item.name.first.includes(value));
+
         this.setState({
-            [searchName]: value
+            [searchName]: value,
+            filteredPeople: list
         });
-
-        if (this.state.search !== '') {
-            const list = this.state.filteredPeople.filter(item => item.name.first.includes(this.state.searchName));
-
-            this.setState({
-                filteredPeople: list
-            })
-        } else {
-
-            this.setState({
-                filteredPeople: this.state.people
-            })
-        };
     }
 
     sortAscending = () => {
