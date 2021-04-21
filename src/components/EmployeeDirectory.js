@@ -95,8 +95,7 @@ class Table extends React.Component {
         });
     }
 
-    sortCountryDescending = event => {
-        event.preventDefault();
+    sortCountryDescending = () => {
         const list = this.state.filteredPeople;
         list.sort((a, b) => {
             const nameA = a.location.country.toUpperCase();
