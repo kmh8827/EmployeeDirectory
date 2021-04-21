@@ -1,4 +1,4 @@
-# Employee Directory <img align="right" src=" ">
+# Employee Directory
 
 ![EmployeeDirectory](https://user-images.githubusercontent.com/73497003/115580104-c8a44380-a294-11eb-8424-909168493ff8.PNG)
 
